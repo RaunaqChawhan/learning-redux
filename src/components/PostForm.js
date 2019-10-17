@@ -10,7 +10,7 @@ class PostForm extends Component {
         };
 
         this.onChange = this.onChange.bind(this);
-        this.onnSubmit = this.onSubmit.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
     onChange(e) {
@@ -23,7 +23,7 @@ class PostForm extends Component {
         const post = {
             title: this.state.title,
             body: this.state.body
-        }
+        };
 
         fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
@@ -33,7 +33,7 @@ class PostForm extends Component {
             body: JSON.stringify(post)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => console.log(data));
     }
 
     render() {
