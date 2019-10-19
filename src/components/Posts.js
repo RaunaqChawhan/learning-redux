@@ -1,19 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect} from 'react-redux'; //basically connects components to redux store that was provided by Provider component
 
 class Posts extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            posts: []
-        }
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         posts: []
+    //     }
+    // }
 
-    componentWillMount() {
-        fetch('https://jsonplaceholder.typicode.com/posts')
-        .then(res => res.json())
-        .then(data => this.setState({posts: data}));
-    }
+    // componentWillMount() {
+    //     fetch('https://jsonplaceholder.typicode.com/posts')
+    //     .then(res => res.json())
+    //     .then(data => this.setState({posts: data}));
+    // }
 
     render() {
         const postItems = this.state.posts.map(post => (
