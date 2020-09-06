@@ -19,7 +19,7 @@ export function fetchPosts() {
 
 //ES6 syntax
 export const fetchPosts = () => dispatch => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    return fetch('https://jsonplaceholder.typicode.com/posts')
         .then(res => res.json())
         .then(posts => 
             dispatch({
