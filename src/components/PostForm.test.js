@@ -14,13 +14,15 @@ const shallowWrapper = shallow(
 <Provider store={store}>
     <PostForm />
 </Provider>);
+
 const deepWrapper = mount(
     <Provider store={store}>
         <PostForm />
     </Provider>);;
 
 describe('tests the component', () => {
-    it('checks the shallow mount', () => {
-        expect(shallowWrapper).toBeTruthy();
+    it('checks the deep mount', () => {
+        console.log(deepWrapper.find("PostForm").instance());
+        expect(deepWrapper.find("PostForm").instance()).not.toBeNull();
     });
 });
