@@ -1,13 +1,10 @@
 import React from 'react';
-import { shallow, mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import PostForm from './PostForm';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
+import { shallow, mount } from 'enzyme';
 
 const mockStore = configureStore();
-
-configure({ adapter: new Adapter() });
 const store = mockStore({});
 
 const shallowWrapper = shallow(
