@@ -19,7 +19,13 @@ const deepWrapper = mount(
 
 describe('tests the component', () => {
     it('checks the deep mount', () => {
-        console.log(deepWrapper.find("PostForm").instance());
+        // console.log(deepWrapper.find("PostForm").instance());
         expect(deepWrapper.find("PostForm").instance()).not.toBeNull();
+    });
+
+    it('checks the state is changed on simulating the onChange function', () => {
+        deepWrapper.find("PostForm").find('input').simulate('change', { target: { name: 'title', value: "sample"}});
+        console.log(deepWrapper.find("PostForm").state().title);
+        expect(deepWrapper.find("PostForm").state().title).toMatch('sample');
     });
 });
